@@ -1386,7 +1386,9 @@ class phRETS {
 		}
 
 		if (empty($this->cookie_file)) {
-			$this->cookie_file = tempnam("", "phrets");
+			//$this->cookie_file = tempnam("", "phrets");
+			//CHRISTIAN
+			$this->cookie_file = sprintf("/phrets-tmp/%s.tmp",microtime(true));
 		}
 
 		@touch($this->cookie_file);
